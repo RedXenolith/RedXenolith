@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contenedor{
+    width: 30%;
+    margin: 0 auto;    
+}
+
+.box{
+    display: inline-block;
+    border-radius: 15px;
+    border-color: slategray;
+}
+
+#titulo{
+    background-color: rosybrown;
+    text-align: center;
+    font-size: 1.6rem;
+    border-radius: 8px;
+    border-color: slategray;
+    padding: 1rem;
+    top: 1.5rem;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#contenido {
+    background-color: coral;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.hiena{
+    max-width: 30%;
+}
