@@ -15,6 +15,10 @@ html{
 }
 
 .box{
+<<<<<<< HEAD
+=======
+    align-items: center;
+>>>>>>> b7b3db52a64398ca5edb5c899d82b214532aacd5
     display: inline-block;
     border-radius: 15px;
     border-color: slategray;
@@ -33,6 +37,7 @@ html{
     margin: 0 auto;
 }
 
+<<<<<<< HEAD
 #contenido {
     background-color: coral;
     text-align: center;
@@ -40,6 +45,17 @@ html{
     font-size: 1.6rem;
     min-width: 320px;
     margin: 0 auto;
+=======
+#contenido{
+    padding: 1.5rem;
+    background-color: coral;
+    text-align: center;
+    font-size: 1.6rem;
+    width: 80%;
+    min-width: 320px;
+    max-width: 700px;
+
+>>>>>>> b7b3db52a64398ca5edb5c899d82b214532aacd5
 }
 
 .hiena{
