@@ -1,0 +1,716 @@
+/*
+Convenciones a la hora de poner estilos.
+Agregar según este orden:
+
+1. Posicionamiento --> static, absolute, relative, fixed
+2. Modelo de caja (Box model) --> margin, border, padding, content
+3. Tipografía --> tipos, tamaños de fuente, etc
+4. Estilos visuales --> box-shadow, border-radius, gradient, etc
+5. Otros --> reglas CSS y más
+*/
+
+:root{
+    --bitcoin-orange: #f7931a;
+    --soft-orange: #ffe9d5;
+    --secondary-blue: #1a9af7;
+    --soft-blue: #e7f5ff;
+    --warm-black: #282623;
+    --black: #201e1c;
+    --grey: #bababa;
+    --off-white: #faf8f7;
+    --just-white: #fff;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+    scroll-behavior: smooth; /*Complemento para botones que llevan a secciones dentro de la misma pagina*/
+    /*font-family: 'Inter', sans-serif;*/
+}
+
+/*Uso de linear-gradient. Observar abajo!!*/
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+
+header img{
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center;
+}
+
+.header-title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+
+.header-title-container h1{
+ font-size: 2.4rem;
+ font-weight: bold;
+ line-height: 2.6rem;
+ color: var(--just-white);
+}
+
+.header-title-container p{
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+}
+
+/*Estilos de boton muy importantes, poner cuidado al procedimiento para manejar sus estilos y posicion*/
+.header-title-container .header-button{
+    position: absolute; /*Con position absolute usamos top, botton, left y right para posicionar el contenedor*/
+    left: calc(50% - 118px); /*Esta función permite realizar un calculo, y mandar el botón al centro por medio del 50%, pero como el botón es muy grande, usamos el -118 para corregir*/
+    top: 270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black);
+    /*Sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border: none;
+    border-radius: 5px;
+}
+
+.header-button span{
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url('../assets/icons/down-arrow.svg');
+    background-repeat: no-repeat;
+
+}
+
+/*Estilos de Main, contenedor que abarca todo el contenido que no comprende footer o main*/
+
+main{
+    width: 100%;
+    height: auto; /*El alto de este contenedor se verá definido por el contenido del mismo*/
+    background-color: var(--off-white);
+}
+
+.main-exchange-container{
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.main-exchange-title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main-exchange-container .backgroundImg{
+    /*Para conseguir que se despligue la imagen, ya que se encentra en una etiqueta div, vamos a darle una dimension apropiada al div para renderizar la imagen*/
+    width: 195px;
+    height: 195px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('../assets/img/Bitcoin.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-exchange-container h2{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.main-exchange-container p{
+    margin-bottom: 45px;
+    font-size: 1.4rem;
+    font-weight: 500px;
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+
+/*Estilos de tabla, muuuy importantes*/
+
+.main-currency-table{
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+}
+
+.main-currency-table .currency-table-title{
+    text-align: left;
+    margin-left: 5px;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+}
+
+.currency-table-container{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.currency-table-container table{
+    width: 100%;
+    height: 100%;
+}
+
+.currency-table-container td{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--just-white);
+}
+
+
+/*código para crear bordes en las esquinas. se debe crear el borde con las clases generadas dentro de los td porque la etiquetaq table es una etiqueta contenedora no visual, y alterar su radio no tendra efecto visual en la página*/
+.currency-table-container .table__top-left{
+    border-radius: 15px 0 0 0;
+}
+
+.currency-table-container .table__top-right{
+    border-radius: 0 15px 0 0;
+}
+
+.currency-table-container .table__bottom-right{
+    border-radius: 0 0 15px 0;
+}
+
+.currency-table-container .table__bottom-left{
+    border-radius: 0 0 0 15px;
+}
+
+/*Estilos textos a la derecha de la tabla*/
+
+.currency-table-container .table__right{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+/*Estilos de los iconos en la tabla. Para renderizar el ícono es necesario declarar display*/
+.currency-table-container .down{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+    background-image: url(../assets/icons/trending-down.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.currency-table-container .up{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+    background-image: url(../assets/icons/trending-up.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Estilos tabla actualización*/
+
+.currency-table-date{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 8px;
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+}
+
+.currency-table-date p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--warm-black);
+}
+
+/*Estilos de segunda tabla hechos por mi*/
+
+.main-comission-table{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.main-exchange-container .comission-table-title{
+    text-align: left;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secondary-blue);
+}
+
+.comission-table-container{
+    width: 70%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.comission-table-container td{
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    font-family: "Inter", sans-serif;
+    color: var(--grey);
+    background-color: var(--just-white);
+}
+
+.comission-table-container .table__right{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+.comission-table-container .top-right{
+    border-radius: 0 15px 0 0;
+}
+
+.comission-table-container .top-left{
+    border-radius: 15px 0 0 0;
+}
+
+.comission-table-container .bottom-left{
+    border-radius: 0 0 0 15px;
+}
+
+.comission-table-container .bottom-right{
+    border-radius: 0 0 15px 0;
+}
+
+.comission-table-date{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: var(--soft-blue);
+}
+
+.comission-table-date p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--warm-black);
+}
+
+/*Sección de beneficios*/
+
+.main-product-detail{
+    position: relative; /*La position relative es importante si queremos trabajar imagenes como la papa usando position absolute*/
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--black);
+}
+
+
+/*estilos de la papa. poner cuidado en el position*/
+.main-product-detail .papa{
+    position: absolute; /*No olvidar: position basolue siempre busca el primer contenedor padre con position relative para usarlo como referencia a la hora de basar su posicionamiento*/
+    top: -10px; /*en top no utilizas un valor que cambie de acuerdo al tamaño de la pantalla, como si lo haces en el left, por lo que utilizar recursos en un calc es innecesario y no aconsejable*/
+    left: calc(50% - 20px);
+    width: 40px;
+    height: 25px;
+    background-image: url('../assets/icons/batata.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*estilos de la seccion de tarjetas: titulos*/
+
+.product-detail-title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.product-detail-title h2{
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: 550;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+
+.product-detail-title .description{
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/*Estilos seccion tarjetas*/
+
+/*Estilos de iconos. Importante display inline-block para renderizar las imagenes*/
+.product-detailed-card .icon-card{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.clock {
+    background-image: url('./../assets/icons/clock.svg');
+}
+
+.eye {
+    background-image: url('./../assets/icons/eye.svg');
+}
+
+.dolar {
+    background-image: url('../assets/icons/dollar-sign.svg');
+}
+
+.circle{
+    background-image: url('../assets/icons/check-circle.svg');
+}
+
+/*Estilos de la tarjeta. Afecta a todas las tarjetas!!*/
+
+.product-detailed-card{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    min-height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--warm-black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.product-card-title{
+    height: 20px;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--just-white);
+}
+
+.product-card-body{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/*Seccion comodín. La sección comidí se llama así pues solo incluye una imagen y un encabezado*/
+
+.bitcoin-img-container{
+    display: inline-block;
+    width: 100%;
+    min-width: 320px;
+    height: 50vh;
+    background-image: url(../assets/img/bitcoinbaby2x.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bitcoin-img-container h2{
+    padding-top: 60px;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+
+/*Estilos de titulos en sección de planes*/
+
+.main-plans-container{
+    width: 100%; /*El width de los contenedores principales siempre queremos que sea de 100%*/
+    min-width: 320px;
+    padding: 65px 0; /*queremos que exista espacio entre nuestra seccion de planes y las secciones de footer (abajo) y comodín (arriba), pero no que exista espacio a los costados */
+    text-align: center;
+}
+
+.plans-title{
+    width: 90%;/*En cambio, los contenedores de texto siempre deben abarcar 90% puesto que debe existir algún espacio en blanco entre el texto y el borde denuestra página*/
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.plans-title h2{
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.plans-title p{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+/*Estilos de tarjetas en sección de planes*/
+
+.plans-container-card{
+    position: relative; /*usamos relative porque el tecto de recomendado debe ir salido del contenedor, y necesita position absolute*/
+    scroll-snap-align: center;
+    width: 65%; /*A pesar de ser un contenedor de elementos, este contenedor en particular es una tarjeta que no coupa todo el espacio en pantalla*/
+    min-width: 190px; /*al ser una tarjeta, no debe ocupar los tipicos 280px*/
+    max-width: 300px; /*Cuando pasemos de una resolucion de mobile a una de tablet o desktop, querremos que el contenedor conserve la forma de tarjeta y no se expanda de forma anormal*/
+    height: 250px;
+    margin: 50px auto 0; /*aplicar auto si existe desproporcion entre el margin de los costados de un contenedor*/
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+
+.plans-container-card .recommended{
+    position: relative;
+    left: calc(50% - 60px);
+    top: -13px;
+    width: 120px;
+    height: 31px;
+    padding-top: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+    color: var(--just-white);
+    border-radius: 5px;
+    background-color: var(--bitcoin-orange);
+}
+
+.plan-card-title{
+    padding-top: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--black);
+}
+
+.plan-card-price{
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 6.3rem;
+    color: var(--black);
+}
+
+.plan-card-price span{
+    font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align: 25px; /* por defecto el signo $ aparece hasta abajo, para corrregir eso alteramos su posicion vertical con vertical align*/
+}
+
+.plan-card-saving{
+    font-size: 1.2rem;
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.plans-container-card .basic{
+    position: relative;
+    left: calc(25% - 18px);
+    top: -15px;
+    width: 120px;
+    height: 30px;
+    padding-top: 7px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4rem;
+    color: var(--just-white);
+    border-radius: 5px;
+    background-color: var(--secondary-blue);
+}
+
+.plans-container-card .plans-info-container{
+    padding-top: 2px;
+}
+
+.plans-container-card1 .limited{
+    position: relative;
+    left: calc(25% - 20px);
+    top: -15px;
+    width: 120px;
+    height: 30px;
+    padding-top: 7px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4rem;
+    color: #3b3b3a;
+    background-color: #e2dfdf;
+    border-radius: 5px;
+}
+
+.plans-container-card1{
+    position: relative;
+    scroll-snap-align: center;
+    width: 65%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px auto 0;
+    padding: 0 15px;
+    background-color: var(--warm-black);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--warm-black);
+}
+
+.plans-container-card1 .plan-card-title, .plan-card-price1{
+    color: var(--off-white);
+
+}
+
+.plans-container-card1 .plan-card-price1{
+    color: var(--off-white);
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 6.2rem;
+}
+
+.plans-container-card1 .plan-card-price1 span{
+    font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align: 25px;
+}
+
+.plans-container-card1 button{
+    margin-top: 5px;
+    background-color: var(--warm-black);
+    color: var(--off-white);
+}
+
+/*Estilos de botón*/
+
+.plan-card-action{
+    width: 150px;
+    height: 48px;
+    /*margin-top: 20px; Sobra*/
+    background-color: #faf8f7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.plan-card-action span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../assets/icons/orange-right-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    vertical-align: text-bottom;
+}
+
+/*Estilos de scroll. Muy importante*/
+
+.plans-container-slider{
+    display: flex; /*Fundamental en el scroll, no puede faltar*/
+    gap: 20px;
+    height: 316px; /*Cada tarjeta tiene un height de 250px, por lo tento este contenedor será un poco más grande*/
+    overflow-x: scroll; /*Declara que todo elemento que se salga en el eje x genera scroll*/
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+/*Estilos de footer. No hacemos uso de clases porque solo existe un footer y las etiquetas del footer como ul, li, img sson muy especificas*/
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+
+.left ul{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+
+.left li{
+    margin: 10px 0px;
+}
+
+.left li a{
+    text-decoration: none;
+    color: var(--off-white);
+}
+
+.right img{
+    width: 64px;
+    height: 50px;
+}
