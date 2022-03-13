@@ -44,12 +44,12 @@ header{
     min-width: 320px;
     height: 334px;
     text-align: center;
-    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+    background: #303F9F;
 }
 
 header img{
-    width: 150px;
-    height: 24px;
+    width: 180px;
+    height: 60px;
     margin-top: 60px;
     align-self: center;
 }
@@ -89,11 +89,11 @@ header img{
     padding: 15px;
     width: 229px;
     height: 48px;
-    background-color: var(--off-white);
+    background-color: #7C4DFF;
     font-size: 1.4rem;
     font-weight: bold;
     text-decoration: none;
-    color: var(--warm-black);
+    color: #FFFFFF;
     /*Sombra*/
     box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
     border: none;
@@ -139,7 +139,7 @@ main{
     height: 195px;
     margin: 0 auto;
     margin-bottom: 50px;
-    background-image: url('../assets/img/Bitcoin.svg');
+    background-image: url('../assets/img/terminal.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -180,7 +180,7 @@ main{
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 2.3rem;
-    color: var(--bitcoin-orange);
+    color: #7C4DFF;
 }
 
 .currency-table-container{
@@ -289,7 +289,7 @@ main{
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 2.3rem;
-    color: var(--secondary-blue);
+    color: #7C4DFF;
 }
 
 .comission-table-container{
@@ -357,7 +357,8 @@ main{
     min-width: 320px;
     height: auto;
     padding: 20px 10px;
-    background-color: var(--black);
+    background-color: #303F9F;
+    border-radius: 25px;
 }
 
 
@@ -368,7 +369,7 @@ main{
     left: calc(50% - 20px);
     width: 40px;
     height: 25px;
-    background-image: url('../assets/icons/batata.svg');
+    background-image: url('../assets/img/Escudo_UMB.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -464,8 +465,9 @@ main{
     display: inline-block;
     width: 100%;
     min-width: 320px;
-    height: 50vh;
-    background-image: url(../assets/img/bitcoinbaby2x.jpg);
+    height: 70vh;
+    margin-top: 30px;
+    background-image: url(../assets/img/tienda.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -553,7 +555,7 @@ main{
 
 .plan-card-price{
     padding: 5px 0;
-    font-size: 5.2rem;
+    font-size: 3.2rem;
     font-weight: bold;
     line-height: 6.3rem;
     color: var(--black);
@@ -627,7 +629,7 @@ main{
 .plans-container-card1 .plan-card-price1{
     color: var(--off-white);
     padding: 5px 0;
-    font-size: 5.2rem;
+    font-size: 3.2rem;
     font-weight: bold;
     line-height: 6.2rem;
 }
