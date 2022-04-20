@@ -134,7 +134,7 @@ main{
 }
 
 .main-exchange-container .backgroundImg{
-    /*Para conseguir que se despligue la imagen, ya que se encentra en una etiqueta div, vamos a darle una dimension apropiada al div para renderizar la imagen*/
+    /*Para conseguir que se despligue la imagen, ya que se encuentra en una etiqueta div, vamos a darle una dimension apropiada al div para renderizar la imagen*/
     width: 195px;
     height: 195px;
     margin: 0 auto;
@@ -352,7 +352,7 @@ main{
 /*Sección de beneficios*/
 
 .main-product-detail{
-    position: relative; /*La position relative es importante si queremos trabajar imagenes como la papa usando position absolute*/
+    position: relative; /*La position relative es importante si queremos trabajar imagenes como el logo usando position absolute*/
     width: 100%;
     min-width: 320px;
     height: auto;
